@@ -43,9 +43,9 @@ def main(ctx):
   linux_cxx("TOOLSET=clang COMPILER=clang++-10 CXXSTD=03,1 Job 26", "clang++-10", packages="clang-10", llvm_os="xenial", llvm_ver="10", buildtype="boost", image=linuxglobalimage, environment={'TOOLSET': 'clang', 'COMPILER': 'clang++-10', 'CXXSTD': '03,11,14,17,2a', 'DRONE_JOB_UUID': '887309d048'}, globalenv=globalenv),
   linux_cxx("TOOLSET=clang COMPILER=clang++-libc++ CXXSTD= Job 27", "clang++-libc++", packages="libc++-dev", buildtype="boost", image="cppalliance/droneubuntu1404:1", environment={'TOOLSET': 'clang', 'COMPILER': 'clang++-libc++', 'CXXSTD': '03,11,14,1z', 'DRONE_JOB_UUID': 'bc33ea4e26'}, globalenv=globalenv),
   osx_cxx("TOOLSET=clang COMPILER=clang++ CXXSTD=03,11,1 Job 28", "clang++", packages="", buildtype="boost", environment={'TOOLSET': 'clang', 'COMPILER': 'clang++', 'CXXSTD': '03,11,14,1z', 'DRONE_JOB_UUID': '0a57cb53ba'}, globalenv=globalenv),
-  linux_cxx("CMAKE_TEST=1 Job 29", "g++", packages="", buildtype="ebf47d6801-2ef7ed6698", image=linuxglobalimage, environment={'CMAKE_TEST': '1', 'DRONE_JOB_UUID': '7719a1c782'}, globalenv=globalenv),
-  linux_cxx("CMAKE_SUBDIR_TEST=1 Job 30", "g++", packages="", buildtype="41e711e69e-fda7c76df5", image=linuxglobalimage, environment={'CMAKE_SUBDIR_TEST': '1', 'DRONE_JOB_UUID': '22d200f867'}, globalenv=globalenv),
-  linux_cxx("CMAKE_INSTALL_TEST=1 Job 31", "g++", packages="", buildtype="ebf47d6801-53809b8261", image=linuxglobalimage, environment={'CMAKE_INSTALL_TEST': '1', 'DRONE_JOB_UUID': '632667547e'}, globalenv=globalenv),
+  linux_cxx("CMAKE_TEST=1 Job 29", "g++", packages="", buildtype="cmake-test-script", image=linuxglobalimage, environment={'CMAKE_TEST': '1', 'DRONE_JOB_UUID': '7719a1c782'}, globalenv=globalenv),
+  linux_cxx("CMAKE_SUBDIR_TEST=1 Job 30", "g++", packages="", buildtype="cmake-subdir-script", image=linuxglobalimage, environment={'CMAKE_SUBDIR_TEST': '1', 'DRONE_JOB_UUID': '22d200f867'}, globalenv=globalenv),
+  linux_cxx("CMAKE_INSTALL_TEST=1 Job 31", "g++", packages="", buildtype="cmake-install-script", image=linuxglobalimage, environment={'CMAKE_INSTALL_TEST': '1', 'DRONE_JOB_UUID': '632667547e'}, globalenv=globalenv),
   ]
 
 # from https://github.com/boostorg/boost-ci
